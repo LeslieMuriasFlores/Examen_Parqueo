@@ -39,13 +39,16 @@ Route::get('/post/{id}/{nombre}', function ($id,$nombre) {
 //trabajando con una expresion regular para limitar q el segundo parametro sea solo letras y no se pueda introducir numeros
 })->where('nombre', '[a-zA-Z]+');*/
 
-//de esta forma tras escribir inicio en el navegador llama al metodo inicio() del controlador ejemploController.
+/*//de esta forma tras escribir inicio en el navegador llama al metodo inicio() del controlador ejemploController.
 Route::get('/principal', 'Ejemplo2Controller@index');
 
 //pasar un parametro a la url
 Route::get('/post/{id}', function ($id) {  
     return "Este es el post # . $id ";
-});
+});*/
 
 //creando enlaces de paginas al sitio web
 Route::get('/inicio', 'PaginasController@index');
+
+//ruta para acceder directo a todos los metodos que brinda controller al crearlo con artisan resource
+Route::resource("mio", "Ejemplo2Controller");
