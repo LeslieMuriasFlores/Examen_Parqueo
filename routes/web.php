@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//añadiendo el namespace del controlador 
+use App\Http\Controllers\Ejemplo2Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,3 +54,6 @@ Route::get('/inicio', 'PaginasController@index');
 //ruta para acceder directo a todos los metodos que brinda controller al crearlo con artisan resource
 //para ver la ruta especifica a cada uno de ellos(de los metodos del controller), con el comando php artisan route:list
 Route::resource("mio", "Ejemplo2Controller");
+
+//forma para poner las rutas en laravel 8
+Route::get("/ruta",[Ejemplo2Controller::class,"index"]);
