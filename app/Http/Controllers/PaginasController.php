@@ -21,9 +21,9 @@ class PaginasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function contacto()
     {
-        //
+        return view("contacto");
     }
 
     /**
