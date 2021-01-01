@@ -3882,12 +3882,14 @@ textarea.form-control-lg {
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
+
 }
 .navbar-brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
+  margin-left: 2rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -4156,14 +4158,19 @@ textarea.form-control-lg {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #86b7fe;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 0.90rem;
+  margin-right: 0%;
+  margin-left: 15%;
+  max-width: 70%;
+  max-height: 70%;
+
 }
 .card > hr {
-  margin-right: 0;
-  margin-left: 0;
+  margin-right: 0%;
+  margin-left: 0%;
 }
 .card > .list-group {
   border-top: inherit;
