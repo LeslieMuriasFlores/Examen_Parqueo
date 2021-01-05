@@ -45,7 +45,10 @@ class PaginasController extends Controller
      */
     public function show($id)
     {
-        //
+        //utilizando la funcion compact y entre() la variable que quiero pasar a vista
+        //compact("id");
+        return view("acercadenosotros",compact("id"));
+        
     }
 
     /**

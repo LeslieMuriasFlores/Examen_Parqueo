@@ -62,3 +62,5 @@ Route::get("/ruta",[Ejemplo2Controller::class,"index"]);
 Route::get("/inicio", [PaginasController::class,"index"]);
 
 Route::get("/contacto", [PaginasController::class,"contacto"]);
+
+Route::get("/acercad/{id}", [PaginasController::class,"show"]);
