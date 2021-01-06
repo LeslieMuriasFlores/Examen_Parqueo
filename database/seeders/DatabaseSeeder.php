@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+    // \App\Models\User::factory(10)->create();
+     //este metodo de la clase seeder que se encarga de llamar al metodo run de la otra clase >CursoSeeder que creamos 
+        $this->call(CursoSeeder::class);
+
     }
 }
