@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\ColaController;
 use Illuminate\Support\Facades\Route;
 //añadiendo el namespace del controlador 
 use App\Http\Controllers\Ejemplo2Controller;
 use App\Http\Controllers\PaginasController;
+use App\Http\Controllers\ParqueoController;
+use App\Http\Controllers\VehiculoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +19,7 @@ use App\Http\Controllers\PaginasController;
 |
 */
 
-Route::get('/', function () {  
+/*Route::get('/', function () {  
     return view('welcome');
 });
 
@@ -54,13 +58,35 @@ Route::get('/post/{id}', function ($id) {
 
 //ruta para acceder directo a todos los metodos que brinda controller al crearlo con artisan resource
 //para ver la ruta especifica a cada uno de ellos(de los metodos del controller), con el comando php artisan route:list
-Route::resource("mio", "Ejemplo2Controller");
+//Route::resource("mio", "Ejemplo2Controller");
 
 //forma para poner las rutas en laravel 8
-Route::get("/ruta",[Ejemplo2Controller::class,"index"]);
+/*Route::get("/ruta",[Ejemplo2Controller::class,"index"]);*/
 
-Route::get("/inicio", [PaginasController::class,"index"]);
+//Route::get("/inicio", [PaginasController::class,"index"])->name('p_inicio');
 
-Route::get("/contacto", [PaginasController::class,"contacto"]);
 
-Route::get("/acercad/{id}", [PaginasController::class,"show"]);
+Route::get("/", [ParqueoController::class,"index"])->name('p_gestion_parqueos');
+
+Route::post("crearparqueo", [ParqueoController::class,"createParqueo"])->name('p_crearparqueo'); 
+
+Route::get("/listar_parqueo", [ParqueoController::class,"listarParqueo"])->name('p_listarparqueo');
+
+Route::get("/cola", [ColaController::class,"index"])->name('p_inicio');
+Route::get("/listar_cola", [ColaController::class,"listar"])->name('p_listar_cola');
+
+
+Route::post("/crearvehiculo/{vehiculo}", [VehiculoController::class,"addvehiculo"])->name('p_addvehiculo');
+Route::post("/moto", [VehiculoController::class,"addmoto"])->name('p_addmoto');
+Route::post("/carro", [VehiculoController::class,"addcarro"])->name('p_addcarro');
+Route::post("/camion", [VehiculoController::class,"addcamion"])->name('p_addcamion');
+
+//Route::get("/listar_estacionamiento/{nombre}", [ParqueoController::class,"listarestacionamiento"])->name('p_listarestacionamiento');
+
+
+
+//Route::get("/primer_registro/{id}", [PaginasController::class,"show"])->name('info');
+
+/*Route::get("/contacto", [PaginasController::class,"contacto"]);
+
+Route::get("/acercad/{id}", [PaginasController::class,"show"]);*/

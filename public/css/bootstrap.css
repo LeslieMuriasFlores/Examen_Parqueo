@@ -4158,12 +4158,11 @@ textarea.form-control-lg {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #86b7fe;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.90rem;
-  margin-right: 0%;
-  margin-left: 15%;
+  margin-right: 10%;
+  margin-left: 10%;
   max-width: 70%;
   max-height: 70%;
 
@@ -4199,6 +4198,7 @@ textarea.form-control-lg {
 .card-title {
   margin-bottom: 0.5rem;
 }
+
 
 .card-subtitle {
   margin-top: -0.25rem;
@@ -7225,6 +7225,9 @@ textarea.form-control-lg {
 }
 
 .bg-light {
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 0.90rem;
   background-color: #f8f9fa !important;
 }
 

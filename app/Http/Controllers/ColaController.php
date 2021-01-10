@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\cola;
+use App\Models\estacionamiento;
+use App\Models\parqueo;
+use App\Models\vehiculo;
 use Illuminate\Http\Request;
 
-class PaginasController extends Controller
+class ColaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,12 @@ class PaginasController extends Controller
      */
     public function index()
     {
-        return view ("inicio");
+        //mostrar 
+        $cola=cola::all();
+        $estacionamiento=estacionamiento::all();
+        $parqueo=parqueo::all();
+        return view("inicio", compact("cola"), compact("estacionamiento","parqueo"));
+
     }
 
     /**
@@ -22,10 +30,10 @@ class PaginasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function ir_parqueo()
+    public function add()
     {
-        return "esta es la pagina del parqueo una vez que el administrador configuro los valores iniciales"; 
-        //return view("parqueo");
+        //add registro a la  cola
+;
     }
 
     /**
@@ -45,13 +53,13 @@ class PaginasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function listar()
     {
-        //utilizando la funcion compact y entre() la variable que quiero pasar a vista
-        //compact("id");
-        $cola=cola::find($id);
-        return view("primer_registro",compact("id"));
-        
+        //guardar la coleccion de la cola y pasarlo a la vista lista_espera
+        $coleccion=cola::paginate(10);
+        return view("lista_espera", compact("coleccion"));
+
+
     }
 
     /**

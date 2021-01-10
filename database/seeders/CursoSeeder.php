@@ -19,5 +19,7 @@ class CursoSeeder extends Seeder
         $curso->name="laravel";
         $curso->comentario="el frame tiza de php";
         $curso->save();
+
+        
     }
 }
