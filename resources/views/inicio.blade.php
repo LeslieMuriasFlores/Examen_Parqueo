@@ -5,7 +5,7 @@
 @section("barra")
 <a class="navbar-brand" href="{{route('p_inicio')}}">
   <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">
-  Home
+  Inicio
 </a>
 @endsection
     
@@ -13,18 +13,18 @@
 @section("contenido")
 
 
-<h2><p class="text-center">Welcome to the parking lot: 
+<h3><p class="text-center" style="margin-top: 2%">Bienvenidos al parqueo : 
   @foreach ($parqueo as $item)
   {{$item->nombre}}
-  @endforeach</p></h2>
+  @endforeach</p></h3>
 
 
 
-<div class="card-group">
+<div class="card-group" style="margin-top: 2%">
   <div class="card">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Motorcycle</h5>
+      <h5 class="card-title">Motocicletas</h5>
       <form method="POST" action="{{route('p_addmoto')}}">
         @csrf
       <p class="card-text">       
@@ -43,15 +43,13 @@ $cont2=0
           <!--{{$cont2++}}-->
      @endif
  @endforeach
- <p>Plazas pequeñas ocupadas:</p>
+ <p>Motos en estacionamiento:</p>
 
       <div class="progress">
         <div class="progress-bar" role="progressbar" style="width:  @foreach ($parqueo as $item)
-          {{$cont2/$item->cant_plazas_peq*100}}%
-        @endforeach" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
-        @foreach ($parqueo as $item)
-          {{$cont2/$item->cant_plazas_peq*100}}%
-        @endforeach
+          {{round($cont2/$item->cant_plazas_total*100)}}%
+        @endforeach"aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+          {{round($cont2/$item->cant_plazas_total*100)}}%       
         </div>
       </div>
     </div>
@@ -59,7 +57,7 @@ $cont2=0
   <div class="card">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Sedan</h5>
+      <h5 class="card-title">Autos</h5>
       <form method="POST" action="{{route('p_addcarro')}}">
         @csrf
       <p class="card-text">
@@ -78,13 +76,13 @@ $cont3=0
           <!--{{$cont3++}}-->
      @endif
     @endforeach
- <p>Plazas medianas ocupadas:</p>
+ <p>Autos en estacionamiento:</p>
 
       <div class="progress">
         <div class="progress-bar" role="progressbar" style="width:  @foreach ($parqueo as $item)
-        {{$cont3/$item->cant_plazas_medianas*100}}
+        {{round($cont3/$item->cant_plazas_total*100)}}%
         @endforeach" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> @foreach ($parqueo as $item)
-  {{$cont2/$item->cant_plazas_medianas*100}}
+  {{round($cont3/$item->cant_plazas_total*100)}}%
   @endforeach
 </div>
       </div>
@@ -93,7 +91,7 @@ $cont3=0
   <div class="card">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Truck</h5>
+      <h5 class="card-title">Camiones</h5>
       <form method="POST" action="{{route('p_addcamion')}}">
         @csrf
       <p class="card-text">
@@ -111,13 +109,13 @@ $cont4=0
          <!--{{$cont4++}}-->
     @endif
     @endforeach
-    <p>Plazas grandes ocupadas:</p>
+    <p>Camiones en estacionamiento:</p>
 
       <div class="progress">
         <div class="progress-bar" role="progressbar" style="width:     @foreach ($parqueo as $item)
-        {{$cont4/$item->cant_plazas_grandes*100}}
+        {{round($cont4/$item->cant_plazas_total*100)}}%
         @endforeach" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">    @foreach ($parqueo as $item)
-    {{$cont4/$item->cant_plazas_grandes*100}}
+    {{round($cont4/$item->cant_plazas_total*100)}}%
     @endforeach
   </div>
       </div>
@@ -125,12 +123,12 @@ $cont4=0
   </div>
 </div>
 
+ 
  <!-- Estado del parqueo -->
- <footer class="bg-light text-center text-lg-start">
+ <footer class="bg-light text-center text-lg-start"  style="margin-top: 2%">
  
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-   
-    <p>Estado del estacionamiento:</p> 
+    Estado del estacionamiento
 @php
 $cont1=0
 @endphp
@@ -139,7 +137,7 @@ $cont1=0
            <!--{{$cont1++}}-->
       @endif
    @endforeach 
-   {{$cont1}}
+   {{$cont1}}: Vehículos
     <a class="text-dark" href="{{route('p_listarparqueo')}}"><h5>Información del estacionamiento</h5></a>
     <div class="progress">
       <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: @foreach ($parqueo as $item)
@@ -152,20 +150,27 @@ $cont1=0
   </div>
 </footer>
 
+ <!-- liberar campo estacionamiento -->
+ <form method="POST" action="{{route('p_liberar')}}">
+  @csrf     
+    <div class="text-center" style="margin-top: 2%">
+  <button type="submit" class="btn btn-primary btn-block" >Liberar campo en estacionamiento</button>
+    </div>
+ </form>
 
  <!-- Estado de la cola -->
-<footer class="bg-light text-center text-lg-start">
+<footer class="bg-light text-center text-lg-start"  style="margin-top: 2%">
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-    Lista de espera : 
+    Lista de espera 
     @php
     $cont=0
     @endphp
     @foreach ($cola as $item)
       @if ($item['vehiculo_id']>0)
-          {{$cont++}}
+           <!-- {{$cont++}}-->
       @endif
    @endforeach 
-    {{$cont}}
+    {{$cont}}: Vehículos
     <a class="text-dark" href="{{route('p_listar_cola')}}"><h5>Información de la fila</h5></a>
     <div class="progress">
       <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: {{$cont}}%">

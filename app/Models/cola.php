@@ -9,4 +9,5 @@ class cola extends Model
 {
     use HasFactory;
     protected $table = "cola";
+    protected $primaryKey = 'id_cola';
 }

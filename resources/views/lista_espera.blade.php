@@ -4,23 +4,25 @@
 @section("barra")
 <a class="navbar-brand" href="{{route('p_inicio')}}">
   <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">
-  Home
+  Inicio
 </a>
 @endsection
 
 
 @section("contenido")
 
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover"  style="margin-top: 2%">
     <tr>
         <td>Identificador_cola</td>
         <td>Identificador_vehiculo</td>
+        <td>Tipo_vehiculo</td>
         <td>Nombre_parqueo</td>
     </tr>
     @foreach ($coleccion as $item)
     <tr>
         <td>{{$item->id_cola}}</td>
         <td>{{$item->vehiculo_id}}</td>
+        <td>{{$item->vehiculo_tipo}}</td>
         <td>{{$item->parqueo_nombre}}</td>
     </tr>  
     @endforeach

@@ -16,6 +16,7 @@ class CreateColaTable extends Migration
         Schema::create('cola', function (Blueprint $table) {
             $table->id('id_cola');
             $table->string('vehiculo_id');
+            $table->string('vehiculo_tipo');
             $table->string('parqueo_nombre');
             $table->timestamps();
         });

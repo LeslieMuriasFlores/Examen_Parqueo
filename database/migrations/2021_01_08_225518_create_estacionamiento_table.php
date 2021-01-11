@@ -18,6 +18,7 @@ class CreateEstacionamientoTable extends Migration
             $table->string('parqueo_id');
             $table->string('vehiculo_id');
             $table->string('vehiculo_tipo');
+            $table->string('plaza_ocupada');
             $table->string('disponibilidad_total');
             $table->string('disponibilidad_peq');
             $table->string('disponibilidad_mediana');

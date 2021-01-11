@@ -76,10 +76,12 @@ Route::get("/cola", [ColaController::class,"index"])->name('p_inicio');
 Route::get("/listar_cola", [ColaController::class,"listar"])->name('p_listar_cola');
 
 
-Route::post("/crearvehiculo/{vehiculo}", [VehiculoController::class,"addvehiculo"])->name('p_addvehiculo');
+Route::post("/liberarcampo", [ParqueoController::class,"liberarCampo"])->name('p_liberar');
 Route::post("/moto", [VehiculoController::class,"addmoto"])->name('p_addmoto');
 Route::post("/carro", [VehiculoController::class,"addcarro"])->name('p_addcarro');
 Route::post("/camion", [VehiculoController::class,"addcamion"])->name('p_addcamion');
+
+//Route::post("/notificar/{elemento}", [ParqueoController::class,"showinfo"])->name('p_notificar');
 
 //Route::get("/listar_estacionamiento/{nombre}", [ParqueoController::class,"listarestacionamiento"])->name('p_listarestacionamiento');
 
