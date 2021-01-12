@@ -21,15 +21,15 @@
                     <!-- Div espaciador -->
                     <div class="spacing-2"></div>
                       <div class="input-group-addon"><i class="">Capacidad de vehiculos pequeños:</i></div>
-                      <input type="number" class="form-control" name="cant_plazas_peq" placeholder="Puestos pequeños" required>
+                      <input type="number" min="1" pattern="^[0-9]+" class="form-control" name="cant_plazas_peq" placeholder="Puestos pequeños" required>
                     <!-- Div espaciador -->
                     <div class="spacing-2"></div>
                       <div class="input-group-addon"><i class="">Capacidad de vehiculos medianos:</i></div>
-                      <input type="number" class="form-control" name="cant_plazas_medianas" placeholder="Puestos medianos"  required>
+                      <input type="number" min="1" pattern="^[0-9]+" class="form-control" name="cant_plazas_medianas" placeholder="Puestos medianos"  required>
                     <!-- Div espaciador -->
                     <div class="spacing-2"></div>
                       <div class="input-group-addon"><i class="">Capacidad de vehiculos grandes:</i></div>
-                      <input type="number" class="form-control" name="cant_plazas_grandes" placeholder="Puestos grandes" required>            
+                      <input type="number" min="1" pattern="^[0-9]+" class="form-control" name="cant_plazas_grandes" placeholder="Puestos grandes" required>            
                     <!-- Div espaciador -->
                     <div class="spacing-2"></div>      
                     <div>
