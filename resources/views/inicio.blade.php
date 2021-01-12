@@ -4,7 +4,7 @@
 
 @section("barra")
 <a class="navbar-brand" href="{{route('p_inicio')}}">
-  <img src="{{url('img/logo2.png')}}" alt="" width="100" height="50" class="d-inline-block align-top">
+  <img src="{{asset('img/logo2.png')}}" alt="" width="100" height="50" class="d-inline-block align-top">
 Inicio
 </a>
 @endsection
@@ -22,7 +22,7 @@ Inicio
 
 <div class="card-group" style="margin-top: 2%">
   <div class="card">
-    <img src="{{url('img/moto.jpg')}}" class="card-img-top" alt="...">
+    <img src="{{asset('img/moto.jpg')}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Motocicletas</h5>
       <form method="POST" action="{{route('p_addmoto')}}">
@@ -55,7 +55,7 @@ $cont2=0
     </div>
   </div>
   <div class="card">
-    <img src="{{url('img/carro.png')}}" class="card-img-top" alt="...">
+    <img src="{{asset('img/carro.png')}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Autos</h5>
       <form method="POST" action="{{route('p_addcarro')}}">
@@ -89,7 +89,7 @@ $cont3=0
     </div>
   </div>
   <div class="card">
-    <img src="{{url('img/camion1.jpg')}}" class="card-img-top" alt="...">
+    <img src="{{asset('img/camion1.jpg')}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Camiones</h5>
       <form method="POST" action="{{route('p_addcamion')}}">
