@@ -10,8 +10,6 @@
    
 </head>
 <body>
-
-
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       @yield("barra")

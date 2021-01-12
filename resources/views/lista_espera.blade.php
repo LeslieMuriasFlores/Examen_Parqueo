@@ -3,9 +3,9 @@
 
 @section("barra")
 <a class="navbar-brand" href="{{route('p_inicio')}}">
-  <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">
-  Inicio
-</a>
+    <img src="{{url('img/logo2.png')}}" alt="" width="100" height="50" class="d-inline-block align-top">
+    Inicio
+  </a>
 @endsection
 
 
