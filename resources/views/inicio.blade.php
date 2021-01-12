@@ -174,7 +174,7 @@ $cont1=0
     <a class="text-dark" href="{{route('p_listar_cola')}}"><h5>Información de la fila</h5></a>
     <div class="progress">
       <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: {{$cont}}%">
-        {{$cont}}%
+        {{$cont}}
       </div>
     </div>
   </div>
