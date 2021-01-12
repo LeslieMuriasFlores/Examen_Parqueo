@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield("titulo")</title>
-    <link href="{{asset('img/logo2.png')}}" rel="logo">
+    <link href="{{asset('img/logo2.png')}}" rel="shortcut icon" type="image/x-icon">
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
     <script src="{{asset('js/bootstrap.js')}}"></script>
    
