@@ -10,7 +10,7 @@
 
 
 @section("contenido")
-
+<h3><p class="text-center" style="margin-top: 2%">Infomación actual de la lista de espera</p></h3>
 <table class="table table-striped table-hover"  style="margin-top: 2%">
     <tr>
         <td>Identificador_cola</td>

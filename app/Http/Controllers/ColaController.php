@@ -33,7 +33,6 @@ class ColaController extends Controller
     public function add()
     {
         //add registro a la  cola
-;
     }
 
     /**
